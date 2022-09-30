@@ -69,7 +69,7 @@ serve -s dist
 auth0 is installed as a Vue dependency with the following line
 
 ``` sh
-npm install @a
+npm install @auth0/auth0-vue
 ```
 
 To implement an auth0 template, we’ll use steps from the [Vue

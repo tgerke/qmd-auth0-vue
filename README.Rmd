@@ -1,0 +1,71 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  eval = FALSE,
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# auth0 on Vue scaffold to GitHub pages
+
+This template will set up a development environment for [auth0](https://auth0.com/) on [Vue 3](https://vuejs.org/), deployed to GitHub pages.
+
+## Vue's Recommended IDE
+
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
+
+## Vue Setup
+
+The first task is to install Vue 3. Vue's scaffolding is intialized with the following `npm` command; I like to think of it like `usethis::create_project()` except for Vue. It will make a new directory with the title of your project and put some boilerplate documents in it.
+
+```{sh}
+npm init vue@latest
+```
+
+Helpfully, the output gives us next steps, the first two of which are
+
+```{sh}
+npm install
+```
+
+At this point, believe it or not, we have a working Vue app! You can view it with the following `npm` command, which is very useful for compiling and hot-reloading when developing.
+
+```{sh}
+npm run dev
+```
+
+If you follow the `localhost` link that it gives you in your browser, you get your app. Awesome! 
+
+If at any time you're ready to compile the app and minify it for production, run
+
+```{sh}
+npm run build
+```
+
+which will put the web components in the `dist/` directory. These can be uploaded to your prod HTTP server for consumption. Note that `index.html` in `dist/` won't work locally out-of-the-box (it is meant to be served by an HTTP server, so paths will break locally). This is described [here](https://cli.vuejs.org/guide/deployment.html#previewing-locally). You can serve `dist/` locally like this
+
+```{sh}
+npm install -g serve
+# -s flag means serve it in Single-Page Application mode
+# which deals with the routing problem below
+serve -s dist
+```
+
+## auth0 setup
+
+auth0 is installed as a Vue dependency with the following line
+
+```{sh}
+npm install @a
+```
+
+To implement an auth0 template, we'll use steps from the [Vue example](https://auth0.com/docs/quickstart/spa/vuejs/01-login) from the auth0 site.
+
+To get the minimal example running, you just need to do two things: modify `src/App.vue` to script the relevant form, then import/mount auth0 (and its theme) in `src/main.js`. With another call to `npm run dev` we're now looking at our app skeleton. Nice!
+

@@ -1,10 +1,12 @@
 {
   "name": "qmd-auth0-vue",
   "version": "0.0.0",
+  "homepage": "https://tgerke.github.io/qmd-auth0-vue/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview --port 4173"
+    "preview": "vite preview --port 4173",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@auth0/auth0-vue": "^1.0.2",

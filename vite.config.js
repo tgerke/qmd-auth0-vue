@@ -14,5 +14,5 @@ export default defineConfig({
   build: {
     outDir: "docs/"
   },
-  base: "/qmd-auth0-vue/docs/"
+  base: "/qmd-auth0-vue/"
 })
